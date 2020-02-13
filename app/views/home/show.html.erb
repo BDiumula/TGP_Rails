@@ -3,6 +3,7 @@
 	<title>Bienvenue sur The Gossip Project</title>
 </head>
 <body>
+	
 	<h1>The Gossip Project</h1>
 	<h2>Mieux que Gossip Girls, voici la liste des potins !!!!</h2>
 	<br>
@@ -13,7 +14,7 @@
 		<% Gossip.all.each do |gossip| %>
 		<div class="card bg-light p-3">
 			<blockquote class="blockquote mb-0 card-body">
-				<p><a href="<%= gossip_path(gossip.id) %>"> Découvre le potin!</a></p>
+				<p><a href="<%= gossip_path(gossip.id) %>"> <%= gossip.title %></a></p>
 				<footer class="blockquote-footer">
 					<small class="text-muted">
 						<%= gossip.user.first_name %>

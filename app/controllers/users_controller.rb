@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	def index 
 		@user = User.all
+
 	end
 
 	def show
@@ -23,7 +24,8 @@ class UsersController < ApplicationController
  	
  	def create
  		user = User.create(user_params)
- 		redirect_to user_path(user.id)
+ 		flash[:notice]= "Bravo vous avez bien créer votre compte"
+ 		redirect_to users_path(user.id)
  	end 
 
  	private

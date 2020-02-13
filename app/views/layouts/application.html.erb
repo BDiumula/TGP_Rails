@@ -28,6 +28,13 @@
     </div>
   </nav>
   <div class="container" style="padding-top: 5rem;">
+    <% if flash[:notice]%>
+    <div class="alert alert-success"><%= flash[:notice]%></dir>
+    <%end%>
+    <div class="container" style="padding-top: 5rem;">
+    <% if flash[:danger]%>
+    <div class="alert alert-danger"><%= flash[:danger]%></dir>
+    <%end%>
   <%= yield %>
 </body>
 </html>
