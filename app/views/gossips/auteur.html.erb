@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Bienvenue sur The Gossip Project</title>
+  </head>
+  <body>
+    <h1>Ici on est dans le /Show.html.erb> !</h1><br>
+    <h2>Gossip <%= @gossip.id %></h2><br>
+    <p><b>Auteur : </b><%= @gossip.user.first_name %></p>
+    <p><a href="<%= %>"> Découvres-en plus sur l'auteur</a></p>
+
+   	<p><b>Titre du gossip : </b><%= @gossip.title %></p>
+    <p><b>Contenu : </b><%= @gossip.content %></p>
+    <p><b>Créé le : </b><%= @gossip.created_at %></p>
+  </body>
+</html>

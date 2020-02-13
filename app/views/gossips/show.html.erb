@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Bienvenue sur The Gossip Project</title>
+  </head>
+  <body>
+    <h1>Ici on est dans le /Show.html.erb> !</h1><br>
+    <h1>Hot Gossip n°<%= @gossip.id %></h1><br>
+    <p><b>Auteur : </b><%= @gossip.user.first_name %></p>
+    <p><a href="<%= user_path(@auteur.id) %>"> En savoir plus sur l'auteur</a></p>
+
+   	<p><b>Titre du gossip : </b><%= @gossip.title %></p>
+    <p><b>Contenu : </b><%= @gossip.content %></p>
+    <p><b>Créé le : </b><%= @gossip.created_at %></p>
+    <button type="button" class="btn btn-outline-info"><a href="<%= gossips_path %>"> Revenir sur la page Gossips</a></button>
+    <button type="button" class="btn btn-outline-info"><a href="<%= edit_gossip_path(@gossip.id) %>"> Editer le Gossip</a></button>
+    <a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Etes-vous sûr de vouloir supprimer ce gossip ?" data-method="DELETE"> Supprimer le Gossip</a>
+
+
+  </body>
+</html>

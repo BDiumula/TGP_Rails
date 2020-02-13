@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Bienvenue sur The Gossip Project</title>
+</head>
+<body>
+	
+	<h1>The Gossip Project</h1>
+	<h2>Mieux que Gossip Girls, voici la liste des potins !!!!</h2>
+	<br>
+	<h3>À toi les potins</h3>
+	<button type="button" class="btn btn-outline-dark"><a href="<%= new_gossip_path%>">Crée ton propre potin</a></button>
+	<br>
+	<br><div class="card-columns">
+		<% Gossip.all.each do |gossip| %>
+		<div class="card bg-light p-3">
+			<blockquote class="blockquote mb-0 card-body">
+				<p><a href="<%= gossip_path(gossip.id) %>"> <%= gossip.title %></a></p>
+				<footer class="blockquote-footer">
+					<small class="text-muted">
+						<%= gossip.user.first_name %>
+					</small>
+				</footer>
+			</blockquote>
+		</div>
+		<% end %>
+	</body>
+	</html>
