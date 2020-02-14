@@ -3,7 +3,6 @@
     <title>Bienvenue sur The Gossip Project</title>
   </head>
   <body>
-    <h1>Ici on est dans le /Show.html.erb> !</h1><br>
     <h1>Hot Gossip n°<%= @gossip.id %></h1><br>
     <p><b>Auteur : </b><%= @gossip.user.first_name %></p>
     <p><a href="<%= user_path(@auteur.id) %>"> En savoir plus sur l'auteur</a></p>

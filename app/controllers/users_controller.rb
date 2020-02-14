@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
 	def index 
 		@user = User.all
-
 	end
 
 	def show
@@ -21,19 +20,22 @@ class UsersController < ApplicationController
 	def edit 
 		@user = User.find(params[:id])
 	end
- 	
- 	def create
- 		user = User.create(user_params)
- 		flash[:notice]= "Bravo vous avez bien créer votre compte"
- 		redirect_to users_path(user.id)
- 	end 
 
- 	private
+	def create
+		user = User.create(user_params)
+		flash[:notice]= "Bravo vous avez bien créer votre compte"
+		if user.save
+			log_in(@user)
+			redirect_to users_path(@user.id)
+		end
+	end 
 
- 	def user_params
- 		user_params = params.require(:user).permit(:first_name,:last_name,:age,:email,:password,:description)
+		private
 
- 	end
+	def user_params
+			user_params = params.require(:user).permit(:first_name,:last_name,:age,:email,:password,:description)
 
-end
+		end
+
+	end
 
